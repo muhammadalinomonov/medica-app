@@ -50,4 +50,5 @@ flutter:
     - assets/translation/
     - assets/temp/
     - assets/logo/
+    - assets/test/
     - assets/

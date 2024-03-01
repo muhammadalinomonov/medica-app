@@ -3,8 +3,9 @@ import 'package:medical_app/presentation/screen/photo_question/photo_data.dart';
 
 class ImagesRow extends StatefulWidget {
   final List<PhotoData> imageList;
+  final EdgeInsets padding;
 
-  const ImagesRow({required this.imageList, super.key});
+  const ImagesRow({required this.imageList, super.key, this.padding = EdgeInsets.zero});
 
   @override
   State<ImagesRow> createState() => _ImagesRowState();
@@ -17,53 +18,49 @@ class _ImagesRowState extends State<ImagesRow> {
   Widget build(BuildContext context) {
     return Container(
       child: ListView.separated(
+          padding: widget.padding,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => GestureDetector(
-            onTap: (){
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return Dialog(
-                    child: Container(
-                      width: 200,
-                      height: 200,
-                      decoration: ShapeDecoration(
-                        image: DecorationImage(
-                          image: AssetImage((widget.imageList[index] as FromAsset).url),
-                          fit: BoxFit.cover,
-                        ), shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      ),
-                    ),
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Dialog(
+                        child: Container(
+                          width: 200,
+                          height: 200,
+                          decoration: ShapeDecoration(
+                            image: DecorationImage(
+                              image: AssetImage((widget.imageList[index] as FromAsset).url),
+                              fit: BoxFit.cover,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   );
                 },
-              );
-            },
-            child: Container(
+                child: Container(
                   width: 120,
                   height: 100,
                   decoration: ShapeDecoration(
                     image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(
-                            (widget.imageList[index] as FromAsset).url)),
+                        fit: BoxFit.cover, image: AssetImage((widget.imageList[index] as FromAsset).url)),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
                 ),
-          ),
+              ),
           separatorBuilder: (context, index) => SizedBox(
                 width: 16,
               ),
           itemCount: widget.imageList.length),
     );
-
-
   }
-
-
 }
 
 class GalleryExampleItem {

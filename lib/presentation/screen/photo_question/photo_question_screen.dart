@@ -48,61 +48,61 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                 child: Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
-                    Positioned(
-                        bottom: 12,
-                        child: Image.asset("assets/images/ic_effect.png")),
+                    Positioned(bottom: 12, child: Image.asset("assets/images/ic_effect.png")),
                     Container(
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: EdgeInsets.symmetric(horizontal: 0),
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
                             SizedBox(
                               height: 16,
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                // SvgPicture.asset("assets/icons/ic_logo.svg"),
-                                GestureDetector(
-                                  onTap: () async {
-                                    if (context.locale == Locale("uz")) {
-                                      context.setLocale(const Locale("ru"));
-                                    } else {
-                                      context.setLocale(const Locale("uz"));
-                                    }
-                                  },
-                                  child: Container(
-                                    width: 68,
-                                    height: 27,
-                                    alignment: Alignment.center,
-                                    decoration: ShapeDecoration(
-                                      color: secondaryColor,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(13.50),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  // SvgPicture.asset("assets/icons/ic_logo.svg"),
+                                  GestureDetector(
+                                    onTap: () async {
+                                      if (context.locale == Locale("uz")) {
+                                        context.setLocale(const Locale("ru"));
+                                      } else {
+                                        context.setLocale(const Locale("uz"));
+                                      }
+                                    },
+                                    child: Container(
+                                      width: 68,
+                                      height: 27,
+                                      alignment: Alignment.center,
+                                      decoration: ShapeDecoration(
+                                        color: secondaryColor,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(13.50),
+                                        ),
+                                      ),
+                                      child: Text(
+                                        "otherLanguage".tr(),
+                                        style: TextStyle(color: secondaryTextColor),
                                       ),
                                     ),
-                                    child: Text(
-                                      "otherLanguage".tr(),
-                                      style:
-                                          TextStyle(color: secondaryTextColor),
-                                    ),
-                                  ),
-                                )
-                              ],
+                                  )
+                                ],
+                              ),
                             ),
-                            SizedBox(height: 16,),
+                            SizedBox(
+                              height: 16,
+                            ),
                             Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               margin: EdgeInsets.only(right: 0),
                               alignment: Alignment.centerRight,
                               child: CustomSwitchButton(
                                 value: !themeNotifier.isDark,
                                 onValueChange: () {
-                                  themeNotifier.isDark
-                                      ? themeNotifier.isDark = false
-                                      : themeNotifier.isDark = true;
+                                  themeNotifier.isDark ? themeNotifier.isDark = false : themeNotifier.isDark = true;
                                 },
                               ),
                             ),
@@ -110,6 +110,7 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                               height: 8,
                             ),
                             Container(
+                              margin: const EdgeInsets.symmetric(horizontal: 16),
                               width: MediaQuery.of(context).size.width,
                               child: Stack(
                                 alignment: Alignment.bottomCenter,
@@ -119,14 +120,10 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                     // left: 0,
                                     child: Container(
                                       height: 40,
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 16),
+                                      margin: EdgeInsets.symmetric(horizontal: 16),
                                       decoration: BoxDecoration(
-                                          color: Theme.of(context)
-                                              .primaryColor
-                                              .withOpacity(0.25),
-                                          borderRadius:
-                                              BorderRadius.circular(16)),
+                                          color: Theme.of(context).primaryColor.withOpacity(0.25),
+                                          borderRadius: BorderRadius.circular(16)),
                                     ),
                                   ),
                                   Positioned(
@@ -136,14 +133,10 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                       children: [
                                         Container(
                                           height: 40,
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 8),
+                                          margin: EdgeInsets.symmetric(horizontal: 8),
                                           decoration: BoxDecoration(
-                                              color: Theme.of(context)
-                                                  .primaryColor
-                                                  .withOpacity(0.5),
-                                              borderRadius:
-                                                  BorderRadius.circular(16)),
+                                              color: Theme.of(context).primaryColor.withOpacity(0.5),
+                                              borderRadius: BorderRadius.circular(16)),
                                         ),
                                         SizedBox(
                                           height: 8,
@@ -155,17 +148,12 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                     child: Column(
                                       children: [
                                         Container(
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: 24, horizontal: 24),
+                                          width: MediaQuery.of(context).size.width,
+                                          padding: EdgeInsets.symmetric(vertical: 24, horizontal: 24),
                                           // margin: EdgeInsets.symmetric(horizontal: 8),
                                           decoration: BoxDecoration(
-                                              color: Theme.of(context)
-                                                  .primaryColor
-                                                  .withOpacity(1),
-                                              borderRadius:
-                                                  BorderRadius.circular(16)),
+                                              color: Theme.of(context).primaryColor.withOpacity(1),
+                                              borderRadius: BorderRadius.circular(16)),
                                           child: Column(
                                             children: [
                                               Container(
@@ -173,13 +161,9 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                                 child: Text(
                                                   'questionTitle'.tr(),
                                                   style: TextStyle(
-                                                    color: Theme.of(context)
-                                                        .textTheme
-                                                        .bodyLarge!
-                                                        .color,
+                                                    color: Theme.of(context).textTheme.bodyLarge!.color,
                                                     fontSize: 15,
-                                                    fontFamily:
-                                                        'SF Pro Display',
+                                                    fontFamily: 'SF Pro Display',
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                                 ),
@@ -200,6 +184,7 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                               height: 16,
                             ),
                             Container(
+                              margin: const EdgeInsets.symmetric(horizontal: 16),
                               width: MediaQuery.of(context).size.width,
                               child: Stack(
                                 alignment: Alignment.bottomCenter,
@@ -207,13 +192,10 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                   Positioned(
                                     child: Container(
                                       height: 40,
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 16),
+                                      margin: EdgeInsets.symmetric(horizontal: 16),
                                       decoration: BoxDecoration(
-                                          color:
-                                              secondaryColor.withOpacity(0.25),
-                                          borderRadius:
-                                              BorderRadius.circular(16)),
+                                          color: secondaryColor.withOpacity(0.25),
+                                          borderRadius: BorderRadius.circular(16)),
                                     ),
                                   ),
                                   Positioned(
@@ -223,13 +205,10 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                       children: [
                                         Container(
                                           height: 40,
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 8),
+                                          margin: EdgeInsets.symmetric(horizontal: 8),
                                           decoration: BoxDecoration(
-                                              color: secondaryColor
-                                                  .withOpacity(0.5),
-                                              borderRadius:
-                                                  BorderRadius.circular(16)),
+                                              color: secondaryColor.withOpacity(0.5),
+                                              borderRadius: BorderRadius.circular(16)),
                                         ),
                                         SizedBox(
                                           height: 5,
@@ -243,47 +222,34 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                     child: Column(
                                       children: [
                                         Container(
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: 16),
+                                          width: MediaQuery.of(context).size.width,
+                                          padding: EdgeInsets.symmetric(vertical: 16),
                                           // margin: EdgeInsets.symmetric(horizontal: 8),
                                           decoration: BoxDecoration(
-                                              color:
-                                                  secondaryColor.withOpacity(1),
-                                              borderRadius:
-                                                  BorderRadius.circular(16)),
+                                              color: secondaryColor.withOpacity(1),
+                                              borderRadius: BorderRadius.circular(16)),
                                           child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.center,
                                             children: [
                                               GestureDetector(
                                                 onTap: () {
                                                   _pickImageFromGallery();
                                                 },
                                                 child: Container(
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width,
+                                                    width: MediaQuery.of(context).size.width,
                                                     alignment: Alignment.center,
                                                     child: Row(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .center,
+                                                      crossAxisAlignment: CrossAxisAlignment.center,
                                                       children: [
                                                         Spacer(),
-                                                        SvgPicture.asset(
-                                                            "assets/icons/ic_picture.svg"),
+                                                        SvgPicture.asset("assets/icons/ic_picture.svg"),
                                                         Text(
                                                           'insertPhoto'.tr(),
                                                           style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 16,
-                                                            fontFamily:
-                                                                'SF Pro Display',
-                                                            fontWeight:
-                                                                FontWeight.w400,
+                                                            fontFamily: 'SF Pro Display',
+                                                            fontWeight: FontWeight.w400,
                                                           ),
                                                         ),
                                                         Spacer(),
@@ -306,104 +272,91 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                               height: 16,
                             ),
                             (state.userPhoto != null)
-                                ? GestureDetector(
-                              onTap: (){
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return Dialog(
+                                ? Container(
+                                    margin: EdgeInsets.symmetric(horizontal: 16),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return Dialog(
+                                              child: Container(
+                                                width: 280,
+                                                height: 240,
+                                                decoration: ShapeDecoration(
+                                                  image: DecorationImage(
+                                                    image: FileImage((state.userPhoto! as FromFile).file),
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius: BorderRadius.circular(16),
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
                                       child: Container(
-                                        width: 280,
-                                        height: 240,
+                                        width: MediaQuery.of(context).size.width,
+                                        height: 150,
                                         decoration: ShapeDecoration(
-                                          image: DecorationImage(
-                                            image: FileImage((state.userPhoto! as FromFile).file),
-                                            fit: BoxFit.cover,
-                                          ), shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(16),
-                                        ),
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                );
-                              },
-                                  child: Container(
-                                      width: MediaQuery.of(context).size.width,
-                                      height: 150,
-                                      decoration: ShapeDecoration(
-                                        shape: RoundedRectangleBorder(
-                                          side: BorderSide(
-                                            width: 0,
-                                            strokeAlign:
-                                                BorderSide.strokeAlignOutside,
-                                            color: Colors.white,
+                                          shape: RoundedRectangleBorder(
+                                            side: BorderSide(
+                                              width: 0,
+                                              strokeAlign: BorderSide.strokeAlignOutside,
+                                              color: Colors.white,
+                                            ),
+                                            borderRadius: BorderRadius.circular(16),
                                           ),
-                                          borderRadius: BorderRadius.circular(16),
+                                          image: DecorationImage(
+                                              image: FileImage((state.userPhoto! as FromFile).file), fit: BoxFit.cover),
+                                          color: Theme.of(context).primaryColor,
+                                          // border: Border.all( color: (_selectedColor != null && _selectedColor == widget.imageList[index])?secondaryColor:Colors.transparent, width:(_selectedColor != null && _selectedColor == widget.imageList[index])? 3:0)
                                         ),
-                                        image: DecorationImage(
-                                            image: FileImage(
-                                                (state.userPhoto! as FromFile)
-                                                    .file),
-                                            fit: BoxFit.cover),
-                                        color: Theme.of(context).primaryColor,
-                                        // border: Border.all( color: (_selectedColor != null && _selectedColor == widget.imageList[index])?secondaryColor:Colors.transparent, width:(_selectedColor != null && _selectedColor == widget.imageList[index])? 3:0)
                                       ),
                                     ),
-                                )
+                                  )
                                 : SizedBox(),
                             SizedBox(
                               height: (state.userPhoto != null) ? 16 : 0,
                             ),
                             Container(
+                                margin: EdgeInsets.symmetric(horizontal: 16),
                                 width: MediaQuery.of(context).size.width,
                                 padding: EdgeInsets.symmetric(horizontal: 0),
                                 child: Column(
                                   children: [
                                     Container(
                                         alignment: Alignment.center,
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 16, vertical: 16),
+                                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                                         decoration: ShapeDecoration(
                                           color: Theme.of(context).primaryColor,
                                           shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(12),
+                                            borderRadius: BorderRadius.circular(12),
                                           ),
                                         ),
                                         child: Text(
                                           'photo_question${state.index}'.tr(),
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodySmall,
+                                          style: Theme.of(context).textTheme.bodySmall,
                                         )),
                                     Container(
                                       height: 4,
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 8),
+                                      margin: EdgeInsets.symmetric(horizontal: 8),
                                       width: MediaQuery.of(context).size.width,
                                       decoration: BoxDecoration(
-                                          color: Theme.of(context)
-                                              .primaryColor
-                                              .withOpacity(0.5),
+                                          color: Theme.of(context).primaryColor.withOpacity(0.5),
                                           borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(24),
-                                              bottomRight:
-                                                  Radius.circular(24))),
+                                              bottomLeft: Radius.circular(24), bottomRight: Radius.circular(24))),
                                     ),
                                     Container(
                                       height: 4,
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 12),
+                                      margin: EdgeInsets.symmetric(horizontal: 12),
                                       width: MediaQuery.of(context).size.width,
                                       decoration: BoxDecoration(
-                                          color: Theme.of(context)
-                                              .primaryColor
-                                              .withOpacity(0.25),
+                                          color: Theme.of(context).primaryColor.withOpacity(0.25),
                                           borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(24),
-                                              bottomRight:
-                                                  Radius.circular(24))),
+                                              bottomLeft: Radius.circular(24), bottomRight: Radius.circular(24))),
                                     ),
                                   ],
                                 )),
@@ -411,7 +364,7 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                               height: 8,
                             ),
                             Container(
-                              margin: EdgeInsets.symmetric(horizontal: 0),
+                              margin: EdgeInsets.symmetric(horizontal: 16),
                               width: MediaQuery.of(context).size.width,
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -422,59 +375,35 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                         children: [
                                           GestureDetector(
                                             onTap: () {
-                                              bloc.add(SelectAnswer(
-                                                  answer: 1, context: context));
+                                              bloc.add(SelectAnswer(answer: 1, context: context));
                                               setState(() {});
                                             },
                                             child: Container(
                                               alignment: Alignment.center,
-                                              padding: EdgeInsets.symmetric(
-                                                  vertical: 19),
+                                              padding: EdgeInsets.symmetric(vertical: 19),
                                               decoration: BoxDecoration(
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          16)),
-                                              child: Text("yes".tr(),
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall),
+                                                  color: Theme.of(context).primaryColor,
+                                                  borderRadius: BorderRadius.circular(16)),
+                                              child: Text("yes".tr(), style: Theme.of(context).textTheme.bodySmall),
                                             ),
                                           ),
                                           Container(
                                             height: 5,
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: 12),
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
+                                            margin: EdgeInsets.symmetric(horizontal: 12),
+                                            width: MediaQuery.of(context).size.width,
                                             decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                    .primaryColor
-                                                    .withOpacity(0.5),
+                                                color: Theme.of(context).primaryColor.withOpacity(0.5),
                                                 borderRadius: BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(24),
-                                                    bottomRight:
-                                                        Radius.circular(24))),
+                                                    bottomLeft: Radius.circular(24), bottomRight: Radius.circular(24))),
                                           ),
                                           Container(
                                             height: 5,
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: 16),
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
+                                            margin: EdgeInsets.symmetric(horizontal: 16),
+                                            width: MediaQuery.of(context).size.width,
                                             decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                    .primaryColor
-                                                    .withOpacity(0.25),
+                                                color: Theme.of(context).primaryColor.withOpacity(0.25),
                                                 borderRadius: BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(24),
-                                                    bottomRight:
-                                                        Radius.circular(24))),
+                                                    bottomLeft: Radius.circular(24), bottomRight: Radius.circular(24))),
                                           ),
                                         ],
                                       )),
@@ -487,58 +416,34 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                         children: [
                                           GestureDetector(
                                             onTap: () {
-                                              bloc.add(SelectAnswer(
-                                                  answer: 0, context: context));
+                                              bloc.add(SelectAnswer(answer: 0, context: context));
                                             },
                                             child: Container(
                                               alignment: Alignment.center,
-                                              padding: EdgeInsets.symmetric(
-                                                  vertical: 19),
+                                              padding: EdgeInsets.symmetric(vertical: 19),
                                               decoration: BoxDecoration(
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          16)),
-                                              child: Text("no".tr(),
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall),
+                                                  color: Theme.of(context).primaryColor,
+                                                  borderRadius: BorderRadius.circular(16)),
+                                              child: Text("no".tr(), style: Theme.of(context).textTheme.bodySmall),
                                             ),
                                           ),
                                           Container(
                                             height: 5,
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: 12),
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
+                                            margin: EdgeInsets.symmetric(horizontal: 12),
+                                            width: MediaQuery.of(context).size.width,
                                             decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                    .primaryColor
-                                                    .withOpacity(0.5),
+                                                color: Theme.of(context).primaryColor.withOpacity(0.5),
                                                 borderRadius: BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(24),
-                                                    bottomRight:
-                                                        Radius.circular(24))),
+                                                    bottomLeft: Radius.circular(24), bottomRight: Radius.circular(24))),
                                           ),
                                           Container(
                                             height: 5,
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: 16),
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
+                                            margin: EdgeInsets.symmetric(horizontal: 16),
+                                            width: MediaQuery.of(context).size.width,
                                             decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                    .primaryColor
-                                                    .withOpacity(0.25),
+                                                color: Theme.of(context).primaryColor.withOpacity(0.25),
                                                 borderRadius: BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(24),
-                                                    bottomRight:
-                                                        Radius.circular(24))),
+                                                    bottomLeft: Radius.circular(24), bottomRight: Radius.circular(24))),
                                           ),
                                         ],
                                       )),
@@ -552,7 +457,8 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
                                 alignment: Alignment.bottomCenter,
                                 width: MediaQuery.of(context).size.width,
                                 height: 126,
-                                child: ImagesRow(imageList: state.photoList)),
+                                child: ImagesRow(
+                                    padding: EdgeInsets.symmetric(horizontal: 16), imageList: state.photoList)),
                             SizedBox(
                               height: 16,
                             )
@@ -582,8 +488,7 @@ class _PhotoQuestionScreenState extends State<PhotoQuestionScreen> {
   }*/
 
   Future _pickImageFromGallery() async {
-    final returnImage =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
+    final returnImage = await ImagePicker().pickImage(source: ImageSource.gallery);
     setState(() {
       _selectedImage = File(returnImage!.path);
     });

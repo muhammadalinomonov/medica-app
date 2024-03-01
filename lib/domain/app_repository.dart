@@ -32,14 +32,19 @@ class AppRepository {
       'assets/images/top_3.9.png'
     ],
     ['assets/images/top_4.1.jpg', 'assets/images/top_4.2.png'],
-    ['assets/images/top_5.1.png'],
+    [
+      'assets/images/top_5.1.png',
+      'assets/test/img_24.png',
+      'assets/test/img_25.png',
+    ],
     [
       'assets/images/top_6.1.jpg',
       'assets/images/top_6.2.png',
       'assets/images/top_6.3.png',
       'assets/images/top_6.4.png',
       'assets/images/top_6.5.png',
-      'assets/images/top_6.6.png'
+      'assets/images/top_6.6.png',
+      'assets/test/img_26.png'
     ],
     ['assets/images/top_7.1.jpg', 'assets/images/top_7.2.png'],
     [
@@ -80,6 +85,10 @@ class AppRepository {
     ],
     [
       'assets/images/top_11.1.png',
+      'assets/test/img_20.png',
+      'assets/test/img_21.png',
+      'assets/test/img_22.png',
+      'assets/test/img_23.png',
     ],
     [
       'assets/images/top_12.1.png',
